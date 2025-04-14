@@ -24,7 +24,7 @@ import TestimonialsSection from '../../components/WebPageComponents/Testimonials
 export default function WebSite() {
   const cardsStyle = useAppSelector((state) => state.style.cardsStyle);
   const bgColor = useAppSelector((state) => state.style.bgLayoutColor);
-  const projectName = 'Test Editor 100';
+  const projectName = 'Test Editor';
 
   useEffect(() => {
     const darkElement = document.querySelector('body .dark');
@@ -122,10 +122,10 @@ export default function WebSite() {
           content={`Learn more about ${projectName}, our mission, values, and the innovative ERP solutions we offer to transform the manufacturing industry.`}
         />
       </Head>
-      <WebSiteHeader projectName={'Test Editor 100'} pages={pages} />
+      <WebSiteHeader projectName={'Test Editor'} pages={pages} />
       <main className={`flex-grow    bg-white  rounded-none  `}>
         <HeroSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           image={['Team collaborating in office']}
           mainText={`Discover the Heart of ${projectName}`}
           subTitle={`Dive into the story behind ${projectName}. Learn about our mission, values, and the innovative solutions we bring to the manufacturing industry.`}
@@ -134,7 +134,7 @@ export default function WebSite() {
         />
 
         <AboutUsSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           image={['Team brainstorming in conference room']}
           mainText={`Our Mission and Vision at ${projectName}`}
           subTitle={`At ${projectName}, we are committed to revolutionizing the manufacturing industry with cutting-edge ERP solutions. Our vision is to empower businesses with tools that drive efficiency and innovation.`}
@@ -143,9 +143,9 @@ export default function WebSite() {
         />
 
         <FeaturesSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           image={['ERP dashboard on a screen']}
-          withBg={0}
+          withBg={1}
           features={features_points}
           mainText={`Explore ${projectName} Core Features`}
           subTitle={`Discover the powerful features of ${projectName} that streamline your manufacturing operations and drive success.`}
@@ -153,13 +153,13 @@ export default function WebSite() {
         />
 
         <TestimonialsSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           design={TestimonialsDesigns.HORIZONTAL_CAROUSEL_DIVERSITY || ''}
           testimonials={testimonials}
           mainText={`Hear from Our Satisfied ${projectName} Clients `}
         />
       </main>
-      <WebSiteFooter projectName={'Test Editor 100'} pages={pages} />
+      <WebSiteFooter projectName={'Test Editor'} pages={pages} />
     </div>
   );
 }

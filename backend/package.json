@@ -1,6 +1,6 @@
 {
-  "name": "testeditor100",
-  "description": "Test Editor 100 - template backend",
+  "name": "testeditor",
+  "description": "Test Editor - template backend",
   "scripts": {
     "start": "npm run db:migrate && npm run db:seed && npm run watch",
     "db:migrate": "sequelize-cli db:migrate",

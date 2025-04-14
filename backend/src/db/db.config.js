@@ -13,7 +13,7 @@ module.exports = {
     username: 'postgres',
     dialect: 'postgres',
     password: '',
-    database: 'db_test_editor_100',
+    database: 'db_test_editor',
     host: process.env.DB_HOST || 'localhost',
     logging: console.log,
     seederStorage: 'sequelize',

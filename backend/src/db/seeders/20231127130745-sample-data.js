@@ -1,6 +1,8 @@
 const db = require('../models');
 const Users = db.users;
 
+const Employees = db.employees;
+
 const Inventory = db.inventory;
 
 const Machinery = db.machinery;
@@ -19,6 +21,44 @@ const Staff = db.staff;
 
 const Clients = db.clients;
 
+const EmployeesData = [
+  {
+    employee_name: 'John Doe',
+
+    role: 'Operator',
+
+    shift: 'Day',
+
+    payroll: 45000,
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    employee_name: 'Alice Smith',
+
+    role: 'Supervisor',
+
+    shift: 'Night',
+
+    payroll: 55000,
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    employee_name: 'Bob White',
+
+    role: 'Technician',
+
+    shift: 'Day',
+
+    payroll: 48000,
+
+    // type code here for "relation_one" field
+  },
+];
+
 const InventoryData = [
   {
     item_name: 'Steel Beams',
@@ -35,7 +75,7 @@ const InventoryData = [
 
     quantity: 75,
 
-    status: 'returned',
+    status: 'reserved',
 
     // type code here for "relation_one" field
   },
@@ -45,7 +85,7 @@ const InventoryData = [
 
     quantity: 200,
 
-    status: 'returned',
+    status: 'available',
 
     // type code here for "relation_one" field
   },
@@ -195,8 +235,6 @@ const WorkOrdersData = [
   {
     order_number: 'WO-001',
 
-    // type code here for "relation_one" field
-
     // type code here for "relation_many" field
 
     // type code here for "relation_many" field
@@ -211,8 +249,6 @@ const WorkOrdersData = [
   {
     order_number: 'WO-002',
 
-    // type code here for "relation_one" field
-
     // type code here for "relation_many" field
 
     // type code here for "relation_many" field
@@ -226,8 +262,6 @@ const WorkOrdersData = [
 
   {
     order_number: 'WO-003',
-
-    // type code here for "relation_one" field
 
     // type code here for "relation_many" field
 
@@ -259,19 +293,19 @@ const StaffData = [
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Justus Liebig',
+    employee_name: 'Albrecht von Haller',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Lynn Margulis',
+    employee_name: 'Alfred Binet',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Neils Bohr',
+    employee_name: 'Jonas Salk',
   },
 ];
 
@@ -279,7 +313,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Isaac Newton',
+    client_name: 'Alfred Binet',
 
     date_registered: new Date(Date.now()),
 
@@ -289,7 +323,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Noam Chomsky',
+    client_name: 'Albert Einstein',
 
     date_registered: new Date(Date.now()),
 
@@ -299,7 +333,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'William Herschel',
+    client_name: 'Arthur Eddington',
 
     date_registered: new Date(Date.now()),
 
@@ -341,6 +375,41 @@ async function associateUserWithCompany() {
   });
   if (User2?.setCompany) {
     await User2.setCompany(relatedCompany2);
+  }
+}
+
+async function associateEmployeeWithCompany() {
+  const relatedCompany0 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Employee0 = await Employees.findOne({
+    order: [['id', 'ASC']],
+    offset: 0,
+  });
+  if (Employee0?.setCompany) {
+    await Employee0.setCompany(relatedCompany0);
+  }
+
+  const relatedCompany1 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Employee1 = await Employees.findOne({
+    order: [['id', 'ASC']],
+    offset: 1,
+  });
+  if (Employee1?.setCompany) {
+    await Employee1.setCompany(relatedCompany1);
+  }
+
+  const relatedCompany2 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Employee2 = await Employees.findOne({
+    order: [['id', 'ASC']],
+    offset: 2,
+  });
+  if (Employee2?.setCompany) {
+    await Employee2.setCompany(relatedCompany2);
   }
 }
 
@@ -556,41 +625,6 @@ async function associateSupplierWithCompany() {
   }
 }
 
-async function associateWorkOrderWithProduction_manager() {
-  const relatedProduction_manager0 = await Users.findOne({
-    offset: Math.floor(Math.random() * (await Users.count())),
-  });
-  const WorkOrder0 = await WorkOrders.findOne({
-    order: [['id', 'ASC']],
-    offset: 0,
-  });
-  if (WorkOrder0?.setProduction_manager) {
-    await WorkOrder0.setProduction_manager(relatedProduction_manager0);
-  }
-
-  const relatedProduction_manager1 = await Users.findOne({
-    offset: Math.floor(Math.random() * (await Users.count())),
-  });
-  const WorkOrder1 = await WorkOrders.findOne({
-    order: [['id', 'ASC']],
-    offset: 1,
-  });
-  if (WorkOrder1?.setProduction_manager) {
-    await WorkOrder1.setProduction_manager(relatedProduction_manager1);
-  }
-
-  const relatedProduction_manager2 = await Users.findOne({
-    offset: Math.floor(Math.random() * (await Users.count())),
-  });
-  const WorkOrder2 = await WorkOrders.findOne({
-    order: [['id', 'ASC']],
-    offset: 2,
-  });
-  if (WorkOrder2?.setProduction_manager) {
-    await WorkOrder2.setProduction_manager(relatedProduction_manager2);
-  }
-}
-
 // Similar logic for "relation_many"
 
 // Similar logic for "relation_many"
@@ -737,6 +771,8 @@ async function associateClientWithClients_manager() {
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    await Employees.bulkCreate(EmployeesData);
+
     await Inventory.bulkCreate(InventoryData);
 
     await Machinery.bulkCreate(MachineryData);
@@ -760,6 +796,8 @@ module.exports = {
 
       await associateUserWithCompany(),
 
+      await associateEmployeeWithCompany(),
+
       await associateInventoryWithCompany(),
 
       await associateMachineryWithCompany(),
@@ -773,8 +811,6 @@ module.exports = {
       await associateRawMaterialWithCompany(),
 
       await associateSupplierWithCompany(),
-
-      await associateWorkOrderWithProduction_manager(),
 
       // Similar logic for "relation_many"
 
@@ -791,6 +827,8 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete('employees', null, {});
+
     await queryInterface.bulkDelete('inventory', null, {});
 
     await queryInterface.bulkDelete('machinery', null, {});

@@ -27,7 +27,7 @@ import ContactFormSection from '../components/WebPageComponents/ContactFormCompo
 export default function WebSite() {
   const cardsStyle = useAppSelector((state) => state.style.cardsStyle);
   const bgColor = useAppSelector((state) => state.style.bgLayoutColor);
-  const projectName = 'Test Editor 100';
+  const projectName = 'Test Editor';
 
   useEffect(() => {
     const darkElement = document.querySelector('body .dark');
@@ -125,10 +125,10 @@ export default function WebSite() {
           content={`Discover our robust ERP solution tailored for the manufacturing industry. Streamline production, inventory, and workforce management with ease.`}
         />
       </Head>
-      <WebSiteHeader projectName={'Test Editor 100'} pages={pages} />
+      <WebSiteHeader projectName={'Test Editor'} pages={pages} />
       <main className={`flex-grow    bg-white  rounded-none  `}>
         <HeroSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           image={['Modern factory with machinery']}
           mainText={`Revolutionize Manufacturing with ${projectName} ERP`}
           subTitle={`Experience seamless production, inventory, and workforce management with ${projectName}. Our ERP solution is designed to simplify complexities and enhance efficiency in the manufacturing industry.`}
@@ -137,7 +137,7 @@ export default function WebSite() {
         />
 
         <FeaturesSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           image={['Dashboard showing ERP metrics']}
           withBg={1}
           features={features_points}
@@ -147,7 +147,7 @@ export default function WebSite() {
         />
 
         <AboutUsSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           image={['Team collaborating in modern office']}
           mainText={`Empowering Manufacturing with ${projectName}`}
           subTitle={`At ${projectName}, we are dedicated to transforming the manufacturing industry with our innovative ERP solutions. Our mission is to simplify complex processes and enhance operational efficiency for businesses worldwide.`}
@@ -156,21 +156,21 @@ export default function WebSite() {
         />
 
         <TestimonialsSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           design={TestimonialsDesigns.MULTI_CARD_DISPLAY || ''}
           testimonials={testimonials}
           mainText={`What Our Clients Say About ${projectName} `}
         />
 
         <ContactFormSection
-          projectName={'Test Editor 100'}
+          projectName={'Test Editor'}
           design={ContactFormDesigns.WITH_IMAGE || ''}
           image={['Person typing on a laptop']}
           mainText={`Get in Touch with ${projectName} `}
           subTitle={`Reach out to us anytime for inquiries or support. Our team at ${projectName} is here to assist you promptly and efficiently.`}
         />
       </main>
-      <WebSiteFooter projectName={'Test Editor 100'} pages={pages} />
+      <WebSiteFooter projectName={'Test Editor'} pages={pages} />
     </div>
   );
 }
