@@ -65,7 +65,7 @@ const InventoryData = [
 
     quantity: 150,
 
-    status: 'available',
+    status: 'returned',
 
     // type code here for "relation_one" field
   },
@@ -75,7 +75,7 @@ const InventoryData = [
 
     quantity: 75,
 
-    status: 'returned',
+    status: 'available',
 
     // type code here for "relation_one" field
   },
@@ -85,7 +85,7 @@ const InventoryData = [
 
     quantity: 200,
 
-    status: 'available',
+    status: 'returned',
 
     // type code here for "relation_one" field
   },
@@ -293,19 +293,19 @@ const StaffData = [
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Dmitri Mendeleev',
+    employee_name: 'Karl Landsteiner',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'August Kekule',
+    employee_name: 'Albert Einstein',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Carl Linnaeus',
+    employee_name: 'Hans Selye',
   },
 ];
 
@@ -313,7 +313,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Louis Pasteur',
+    client_name: 'Carl Gauss (Karl Friedrich Gauss)',
 
     date_registered: new Date(Date.now()),
 
@@ -323,7 +323,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Robert Koch',
+    client_name: 'Leonard Euler',
 
     date_registered: new Date(Date.now()),
 
@@ -333,7 +333,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Euclid',
+    client_name: 'Charles Darwin',
 
     date_registered: new Date(Date.now()),
 
