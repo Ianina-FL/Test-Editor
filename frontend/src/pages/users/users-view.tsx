@@ -148,57 +148,6 @@ const UsersView = () => {
             <p>{users?.companies?.name ?? 'No data'}</p>
           </div>
 
-          <>
-            <p className={'block font-bold mb-2'}>
-              Work_orders ProductionManager
-            </p>
-            <CardBox
-              className='mb-6 border border-gray-300 rounded overflow-hidden'
-              hasTable
-            >
-              <div className='overflow-x-auto'>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>OrderNumber</th>
-
-                      <th>StartDate</th>
-
-                      <th>EndDate</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {users.work_orders_production_manager &&
-                      Array.isArray(users.work_orders_production_manager) &&
-                      users.work_orders_production_manager.map((item: any) => (
-                        <tr
-                          key={item.id}
-                          onClick={() =>
-                            router.push(
-                              `/work_orders/work_orders-view/?id=${item.id}`,
-                            )
-                          }
-                        >
-                          <td data-label='order_number'>{item.order_number}</td>
-
-                          <td data-label='start_date'>
-                            {dataFormatter.dateTimeFormatter(item.start_date)}
-                          </td>
-
-                          <td data-label='end_date'>
-                            {dataFormatter.dateTimeFormatter(item.end_date)}
-                          </td>
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-              </div>
-              {!users?.work_orders_production_manager?.length && (
-                <div className={'text-center py-4'}>No data</div>
-              )}
-            </CardBox>
-          </>
-
           <BaseDivider />
 
           <BaseButton

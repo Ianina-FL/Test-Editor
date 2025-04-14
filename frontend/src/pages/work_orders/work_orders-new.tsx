@@ -35,8 +35,6 @@ import moment from 'moment';
 const initialValues = {
   order_number: '',
 
-  production_manager: '',
-
   raw_materials: [],
 
   machinery: [],
@@ -89,19 +87,6 @@ const Work_ordersNew = () => {
             <Form>
               <FormField label='OrderNumber'>
                 <Field name='order_number' placeholder='OrderNumber' />
-              </FormField>
-
-              <FormField
-                label='ProductionManager'
-                labelFor='production_manager'
-              >
-                <Field
-                  name='production_manager'
-                  id='production_manager'
-                  component={SelectField}
-                  options={[]}
-                  itemRef={'users'}
-                ></Field>
               </FormField>
 
               <FormField label='RawMaterials' labelFor='raw_materials'>

@@ -15,6 +15,8 @@ import work_ordersSlice from './work_orders/work_ordersSlice';
 import rolesSlice from './roles/rolesSlice';
 import permissionsSlice from './permissions/permissionsSlice';
 import companiesSlice from './companies/companiesSlice';
+import staffSlice from './staff/staffSlice';
+import clientsSlice from './clients/clientsSlice';
 
 export const store = configureStore({
   reducer: {
@@ -34,6 +36,8 @@ export const store = configureStore({
     roles: rolesSlice,
     permissions: permissionsSlice,
     companies: companiesSlice,
+    staff: staffSlice,
+    clients: clientsSlice,
   },
 });
 

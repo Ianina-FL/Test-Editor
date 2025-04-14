@@ -120,6 +120,8 @@ module.exports = {
       'roles',
       'permissions',
       'companies',
+      'staff',
+      'clients',
       ,
     ];
     await queryInterface.bulkInsert(
@@ -972,6 +974,56 @@ primary key ("roles_permissionsId", "permissionId")
       {
         createdAt,
         updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('CREATE_STAFF'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('READ_STAFF'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('UPDATE_STAFF'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('DELETE_STAFF'),
+      },
+
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('CREATE_CLIENTS'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('READ_CLIENTS'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('UPDATE_CLIENTS'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('DELETE_CLIENTS'),
+      },
+
+      {
+        createdAt,
+        updatedAt,
         roles_permissionsId: getId('SuperAdmin'),
         permissionId: getId('CREATE_USERS'),
       },
@@ -1242,6 +1294,56 @@ primary key ("roles_permissionsId", "permissionId")
         updatedAt,
         roles_permissionsId: getId('SuperAdmin'),
         permissionId: getId('DELETE_COMPANIES'),
+      },
+
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('CREATE_STAFF'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('READ_STAFF'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('UPDATE_STAFF'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('DELETE_STAFF'),
+      },
+
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('CREATE_CLIENTS'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('READ_CLIENTS'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('UPDATE_CLIENTS'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('SuperAdmin'),
+        permissionId: getId('DELETE_CLIENTS'),
       },
 
       {

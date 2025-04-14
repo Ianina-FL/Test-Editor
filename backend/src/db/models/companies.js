@@ -98,6 +98,22 @@ module.exports = function (sequelize, DataTypes) {
       constraints: false,
     });
 
+    db.companies.hasMany(db.staff, {
+      as: 'staff_companies',
+      foreignKey: {
+        name: 'companiesId',
+      },
+      constraints: false,
+    });
+
+    db.companies.hasMany(db.clients, {
+      as: 'clients_companies',
+      foreignKey: {
+        name: 'companiesId',
+      },
+      constraints: false,
+    });
+
     //end loop
 
     db.companies.belongsTo(db.users, {

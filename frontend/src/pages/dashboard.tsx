@@ -33,6 +33,8 @@ const Dashboard = () => {
   const [roles, setRoles] = React.useState('Loading...');
   const [permissions, setPermissions] = React.useState('Loading...');
   const [companies, setCompanies] = React.useState('Loading...');
+  const [staff, setStaff] = React.useState('Loading...');
+  const [clients, setClients] = React.useState('Loading...');
 
   const [widgetsRole, setWidgetsRole] = React.useState({
     role: { value: '', label: '' },
@@ -57,6 +59,8 @@ const Dashboard = () => {
       'roles',
       'permissions',
       'companies',
+      'staff',
+      'clients',
     ];
     const fns = [
       setUsers,
@@ -70,6 +74,8 @@ const Dashboard = () => {
       setRoles,
       setPermissions,
       setCompanies,
+      setStaff,
+      setClients,
     ];
 
     const requests = entities.map((entity, index) => {
@@ -512,6 +518,70 @@ const Dashboard = () => {
                     </div>
                     <div className='text-3xl leading-tight font-semibold'>
                       {companies}
+                    </div>
+                  </div>
+                  <div>
+                    <BaseIcon
+                      className={`${iconsColor}`}
+                      w='w-16'
+                      h='h-16'
+                      size={48}
+                      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                      // @ts-ignore
+                      path={icon.mdiTable || icon.mdiTable}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {hasPermission(currentUser, 'READ_STAFF') && (
+            <Link href={'/staff/staff-list'}>
+              <div
+                className={`${
+                  corners !== 'rounded-full' ? corners : 'rounded-3xl'
+                } dark:bg-dark-900 ${cardsStyle} dark:border-dark-700 p-6`}
+              >
+                <div className='flex justify-between align-center'>
+                  <div>
+                    <div className='text-lg leading-tight   text-gray-500 dark:text-gray-400'>
+                      Staff
+                    </div>
+                    <div className='text-3xl leading-tight font-semibold'>
+                      {staff}
+                    </div>
+                  </div>
+                  <div>
+                    <BaseIcon
+                      className={`${iconsColor}`}
+                      w='w-16'
+                      h='h-16'
+                      size={48}
+                      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                      // @ts-ignore
+                      path={icon.mdiTable || icon.mdiTable}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {hasPermission(currentUser, 'READ_CLIENTS') && (
+            <Link href={'/clients/clients-list'}>
+              <div
+                className={`${
+                  corners !== 'rounded-full' ? corners : 'rounded-3xl'
+                } dark:bg-dark-900 ${cardsStyle} dark:border-dark-700 p-6`}
+              >
+                <div className='flex justify-between align-center'>
+                  <div>
+                    <div className='text-lg leading-tight   text-gray-500 dark:text-gray-400'>
+                      Clients
+                    </div>
+                    <div className='text-3xl leading-tight font-semibold'>
+                      {clients}
                     </div>
                   </div>
                   <div>

@@ -279,11 +279,6 @@ module.exports = class UsersDBApi {
 
     const output = users.get({ plain: true });
 
-    output.work_orders_production_manager =
-      await users.getWork_orders_production_manager({
-        transaction,
-      });
-
     output.avatar = await users.getAvatar({
       transaction,
     });

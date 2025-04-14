@@ -40,8 +40,6 @@ const EditWork_ordersPage = () => {
   const initVals = {
     order_number: '',
 
-    production_manager: null,
-
     raw_materials: [],
 
     machinery: [],
@@ -107,20 +105,6 @@ const EditWork_ordersPage = () => {
             <Form>
               <FormField label='OrderNumber'>
                 <Field name='order_number' placeholder='OrderNumber' />
-              </FormField>
-
-              <FormField
-                label='ProductionManager'
-                labelFor='production_manager'
-              >
-                <Field
-                  name='production_manager'
-                  id='production_manager'
-                  component={SelectField}
-                  options={initialValues.production_manager}
-                  itemRef={'users'}
-                  showField={'firstName'}
-                ></Field>
               </FormField>
 
               <FormField label='RawMaterials' labelFor='raw_materials'>

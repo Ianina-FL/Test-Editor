@@ -459,6 +459,86 @@ const CompaniesView = () => {
             </CardBox>
           </>
 
+          <>
+            <p className={'block font-bold mb-2'}>Staff companies</p>
+            <CardBox
+              className='mb-6 border border-gray-300 rounded overflow-hidden'
+              hasTable
+            >
+              <div className='overflow-x-auto'>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Employee name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {companies.staff_companies &&
+                      Array.isArray(companies.staff_companies) &&
+                      companies.staff_companies.map((item: any) => (
+                        <tr
+                          key={item.id}
+                          onClick={() =>
+                            router.push(`/staff/staff-view/?id=${item.id}`)
+                          }
+                        >
+                          <td data-label='employee_name'>
+                            {item.employee_name}
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+              {!companies?.staff_companies?.length && (
+                <div className={'text-center py-4'}>No data</div>
+              )}
+            </CardBox>
+          </>
+
+          <>
+            <p className={'block font-bold mb-2'}>Clients companies</p>
+            <CardBox
+              className='mb-6 border border-gray-300 rounded overflow-hidden'
+              hasTable
+            >
+              <div className='overflow-x-auto'>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Client name</th>
+
+                      <th>Date registered</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {companies.clients_companies &&
+                      Array.isArray(companies.clients_companies) &&
+                      companies.clients_companies.map((item: any) => (
+                        <tr
+                          key={item.id}
+                          onClick={() =>
+                            router.push(`/clients/clients-view/?id=${item.id}`)
+                          }
+                        >
+                          <td data-label='client_name'>{item.client_name}</td>
+
+                          <td data-label='date_registered'>
+                            {dataFormatter.dateTimeFormatter(
+                              item.date_registered,
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+              {!companies?.clients_companies?.length && (
+                <div className={'text-center py-4'}>No data</div>
+              )}
+            </CardBox>
+          </>
+
           <BaseDivider />
 
           <BaseButton

@@ -25,10 +25,6 @@ module.exports = class Work_ordersDBApi {
       { transaction },
     );
 
-    await work_orders.setProduction_manager(data.production_manager || null, {
-      transaction,
-    });
-
     await work_orders.setCompanies(data.companies || null, {
       transaction,
     });
@@ -91,14 +87,6 @@ module.exports = class Work_ordersDBApi {
     updatePayload.updatedById = currentUser.id;
 
     await work_orders.update(updatePayload, { transaction });
-
-    if (data.production_manager !== undefined) {
-      await work_orders.setProduction_manager(
-        data.production_manager,
-
-        { transaction },
-      );
-    }
 
     if (data.companies !== undefined) {
       await work_orders.setCompanies(
@@ -185,10 +173,6 @@ module.exports = class Work_ordersDBApi {
         transaction,
       });
 
-    output.production_manager = await work_orders.getProduction_manager({
-      transaction,
-    });
-
     output.raw_materials = await work_orders.getRaw_materials({
       transaction,
     });
@@ -226,32 +210,6 @@ module.exports = class Work_ordersDBApi {
     const transaction = (options && options.transaction) || undefined;
 
     let include = [
-      {
-        model: db.users,
-        as: 'production_manager',
-
-        where: filter.production_manager
-          ? {
-              [Op.or]: [
-                {
-                  id: {
-                    [Op.in]: filter.production_manager
-                      .split('|')
-                      .map((term) => Utils.uuid(term)),
-                  },
-                },
-                {
-                  firstName: {
-                    [Op.or]: filter.production_manager
-                      .split('|')
-                      .map((term) => ({ [Op.iLike]: `%${term}%` })),
-                  },
-                },
-              ],
-            }
-          : {},
-      },
-
       {
         model: db.companies,
         as: 'companies',

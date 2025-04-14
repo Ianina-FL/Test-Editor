@@ -102,14 +102,6 @@ module.exports = function (sequelize, DataTypes) {
 
     /// loop through entities and it's fields, and if ref === current e[name] and create relation has many on parent entity
 
-    db.users.hasMany(db.work_orders, {
-      as: 'work_orders_production_manager',
-      foreignKey: {
-        name: 'production_managerId',
-      },
-      constraints: false,
-    });
-
     //end loop
 
     db.users.belongsTo(db.roles, {

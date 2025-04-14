@@ -61,17 +61,6 @@ const ListWork_orders = ({
                   </div>
 
                   <div className={'flex-1 px-3'}>
-                    <p className={'text-xs   text-gray-500 '}>
-                      ProductionManager
-                    </p>
-                    <p className={'line-clamp-2'}>
-                      {dataFormatter.usersOneListFormatter(
-                        item.production_manager,
-                      )}
-                    </p>
-                  </div>
-
-                  <div className={'flex-1 px-3'}>
                     <p className={'text-xs   text-gray-500 '}>RawMaterials</p>
                     <p className={'line-clamp-2'}>
                       {dataFormatter

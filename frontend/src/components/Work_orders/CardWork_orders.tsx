@@ -89,19 +89,6 @@ const CardWork_orders = ({
 
                 <div className='flex justify-between gap-x-4 py-3'>
                   <dt className='  text-gray-500  dark:text-dark-600'>
-                    ProductionManager
-                  </dt>
-                  <dd className='flex items-start gap-x-2'>
-                    <div className='font-medium line-clamp-4'>
-                      {dataFormatter.usersOneListFormatter(
-                        item.production_manager,
-                      )}
-                    </div>
-                  </dd>
-                </div>
-
-                <div className='flex justify-between gap-x-4 py-3'>
-                  <dt className='  text-gray-500  dark:text-dark-600'>
                     RawMaterials
                   </dt>
                   <dd className='flex items-start gap-x-2'>

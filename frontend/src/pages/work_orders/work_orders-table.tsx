@@ -37,8 +37,6 @@ const Work_ordersTablesPage = () => {
     { label: 'StartDate', title: 'start_date', date: 'true' },
     { label: 'EndDate', title: 'end_date', date: 'true' },
 
-    { label: 'ProductionManager', title: 'production_manager' },
-
     { label: 'RawMaterials', title: 'raw_materials' },
     { label: 'Machinery', title: 'machinery' },
   ]);

@@ -58,6 +58,10 @@ module.exports = class SearchService {
         work_orders: ['order_number'],
 
         companies: ['name'],
+
+        staff: ['employee_name'],
+
+        clients: ['client_name'],
       };
       const columnsInt = {
         employees: ['payroll'],

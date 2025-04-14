@@ -17,6 +17,10 @@ const WorkOrders = db.work_orders;
 
 const Companies = db.companies;
 
+const Staff = db.staff;
+
+const Clients = db.clients;
+
 const EmployeesData = [
   {
     employee_name: 'John Doe',
@@ -61,7 +65,7 @@ const InventoryData = [
 
     quantity: 150,
 
-    status: 'returned',
+    status: 'available',
 
     // type code here for "relation_one" field
   },
@@ -71,7 +75,7 @@ const InventoryData = [
 
     quantity: 75,
 
-    status: 'available',
+    status: 'reserved',
 
     // type code here for "relation_one" field
   },
@@ -81,7 +85,7 @@ const InventoryData = [
 
     quantity: 200,
 
-    status: 'reserved',
+    status: 'available',
 
     // type code here for "relation_one" field
   },
@@ -231,8 +235,6 @@ const WorkOrdersData = [
   {
     order_number: 'WO-001',
 
-    // type code here for "relation_one" field
-
     // type code here for "relation_many" field
 
     // type code here for "relation_many" field
@@ -247,8 +249,6 @@ const WorkOrdersData = [
   {
     order_number: 'WO-002',
 
-    // type code here for "relation_one" field
-
     // type code here for "relation_many" field
 
     // type code here for "relation_many" field
@@ -262,8 +262,6 @@ const WorkOrdersData = [
 
   {
     order_number: 'WO-003',
-
-    // type code here for "relation_one" field
 
     // type code here for "relation_many" field
 
@@ -288,6 +286,58 @@ const CompaniesData = [
 
   {
     name: 'CraftWorks',
+  },
+];
+
+const StaffData = [
+  {
+    // type code here for "relation_one" field
+
+    employee_name: 'Albrecht von Haller',
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    employee_name: 'Alfred Binet',
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    employee_name: 'Jonas Salk',
+  },
+];
+
+const ClientsData = [
+  {
+    // type code here for "relation_one" field
+
+    client_name: 'Alfred Binet',
+
+    date_registered: new Date(Date.now()),
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    client_name: 'Albert Einstein',
+
+    date_registered: new Date(Date.now()),
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    client_name: 'Arthur Eddington',
+
+    date_registered: new Date(Date.now()),
+
+    // type code here for "relation_one" field
   },
 ];
 
@@ -575,41 +625,6 @@ async function associateSupplierWithCompany() {
   }
 }
 
-async function associateWorkOrderWithProduction_manager() {
-  const relatedProduction_manager0 = await Users.findOne({
-    offset: Math.floor(Math.random() * (await Users.count())),
-  });
-  const WorkOrder0 = await WorkOrders.findOne({
-    order: [['id', 'ASC']],
-    offset: 0,
-  });
-  if (WorkOrder0?.setProduction_manager) {
-    await WorkOrder0.setProduction_manager(relatedProduction_manager0);
-  }
-
-  const relatedProduction_manager1 = await Users.findOne({
-    offset: Math.floor(Math.random() * (await Users.count())),
-  });
-  const WorkOrder1 = await WorkOrders.findOne({
-    order: [['id', 'ASC']],
-    offset: 1,
-  });
-  if (WorkOrder1?.setProduction_manager) {
-    await WorkOrder1.setProduction_manager(relatedProduction_manager1);
-  }
-
-  const relatedProduction_manager2 = await Users.findOne({
-    offset: Math.floor(Math.random() * (await Users.count())),
-  });
-  const WorkOrder2 = await WorkOrders.findOne({
-    order: [['id', 'ASC']],
-    offset: 2,
-  });
-  if (WorkOrder2?.setProduction_manager) {
-    await WorkOrder2.setProduction_manager(relatedProduction_manager2);
-  }
-}
-
 // Similar logic for "relation_many"
 
 // Similar logic for "relation_many"
@@ -649,6 +664,111 @@ async function associateWorkOrderWithCompany() {
   }
 }
 
+async function associateStaffWithCompany() {
+  const relatedCompany0 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Staff0 = await Staff.findOne({
+    order: [['id', 'ASC']],
+    offset: 0,
+  });
+  if (Staff0?.setCompany) {
+    await Staff0.setCompany(relatedCompany0);
+  }
+
+  const relatedCompany1 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Staff1 = await Staff.findOne({
+    order: [['id', 'ASC']],
+    offset: 1,
+  });
+  if (Staff1?.setCompany) {
+    await Staff1.setCompany(relatedCompany1);
+  }
+
+  const relatedCompany2 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Staff2 = await Staff.findOne({
+    order: [['id', 'ASC']],
+    offset: 2,
+  });
+  if (Staff2?.setCompany) {
+    await Staff2.setCompany(relatedCompany2);
+  }
+}
+
+async function associateClientWithCompany() {
+  const relatedCompany0 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Client0 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 0,
+  });
+  if (Client0?.setCompany) {
+    await Client0.setCompany(relatedCompany0);
+  }
+
+  const relatedCompany1 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Client1 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 1,
+  });
+  if (Client1?.setCompany) {
+    await Client1.setCompany(relatedCompany1);
+  }
+
+  const relatedCompany2 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Client2 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 2,
+  });
+  if (Client2?.setCompany) {
+    await Client2.setCompany(relatedCompany2);
+  }
+}
+
+async function associateClientWithClients_manager() {
+  const relatedClients_manager0 = await Staff.findOne({
+    offset: Math.floor(Math.random() * (await Staff.count())),
+  });
+  const Client0 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 0,
+  });
+  if (Client0?.setClients_manager) {
+    await Client0.setClients_manager(relatedClients_manager0);
+  }
+
+  const relatedClients_manager1 = await Staff.findOne({
+    offset: Math.floor(Math.random() * (await Staff.count())),
+  });
+  const Client1 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 1,
+  });
+  if (Client1?.setClients_manager) {
+    await Client1.setClients_manager(relatedClients_manager1);
+  }
+
+  const relatedClients_manager2 = await Staff.findOne({
+    offset: Math.floor(Math.random() * (await Staff.count())),
+  });
+  const Client2 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 2,
+  });
+  if (Client2?.setClients_manager) {
+    await Client2.setClients_manager(relatedClients_manager2);
+  }
+}
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await Employees.bulkCreate(EmployeesData);
@@ -666,6 +786,10 @@ module.exports = {
     await WorkOrders.bulkCreate(WorkOrdersData);
 
     await Companies.bulkCreate(CompaniesData);
+
+    await Staff.bulkCreate(StaffData);
+
+    await Clients.bulkCreate(ClientsData);
 
     await Promise.all([
       // Similar logic for "relation_many"
@@ -688,13 +812,17 @@ module.exports = {
 
       await associateSupplierWithCompany(),
 
-      await associateWorkOrderWithProduction_manager(),
-
       // Similar logic for "relation_many"
 
       // Similar logic for "relation_many"
 
       await associateWorkOrderWithCompany(),
+
+      await associateStaffWithCompany(),
+
+      await associateClientWithCompany(),
+
+      await associateClientWithClients_manager(),
     ]);
   },
 
@@ -714,5 +842,9 @@ module.exports = {
     await queryInterface.bulkDelete('work_orders', null, {});
 
     await queryInterface.bulkDelete('companies', null, {});
+
+    await queryInterface.bulkDelete('staff', null, {});
+
+    await queryInterface.bulkDelete('clients', null, {});
   },
 };

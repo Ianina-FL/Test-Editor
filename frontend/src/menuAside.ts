@@ -101,6 +101,22 @@ const menuAside: MenuAsideItem[] = [
     permissions: 'READ_COMPANIES',
   },
   {
+    href: '/staff/staff-list',
+    label: 'Staff',
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    icon: icon.mdiTable ? icon.mdiTable : icon.mdiTable,
+    permissions: 'READ_STAFF',
+  },
+  {
+    href: '/clients/clients-list',
+    label: 'Clients',
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    icon: icon.mdiTable ? icon.mdiTable : icon.mdiTable,
+    permissions: 'READ_CLIENTS',
+  },
+  {
     href: '/profile',
     label: 'Profile',
     icon: icon.mdiAccountCircle,

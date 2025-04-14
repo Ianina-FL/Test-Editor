@@ -88,14 +88,6 @@ module.exports = function (sequelize, DataTypes) {
 
     //end loop
 
-    db.work_orders.belongsTo(db.users, {
-      as: 'production_manager',
-      foreignKey: {
-        name: 'production_managerId',
-      },
-      constraints: false,
-    });
-
     db.work_orders.belongsTo(db.companies, {
       as: 'companies',
       foreignKey: {

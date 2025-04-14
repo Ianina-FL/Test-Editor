@@ -39,25 +39,6 @@ export default {
     });
   },
 
-  usersManyListFormatter(val) {
-    if (!val || !val.length) return [];
-    return val.map((item) => item.firstName);
-  },
-  usersOneListFormatter(val) {
-    if (!val) return '';
-    return val.firstName;
-  },
-  usersManyListFormatterEdit(val) {
-    if (!val || !val.length) return [];
-    return val.map((item) => {
-      return { id: item.id, label: item.firstName };
-    });
-  },
-  usersOneListFormatterEdit(val) {
-    if (!val) return '';
-    return { label: val.firstName, id: val.id };
-  },
-
   machineryManyListFormatter(val) {
     if (!val || !val.length) return [];
     return val.map((item) => item.machine_name);
@@ -189,5 +170,24 @@ export default {
   companiesOneListFormatterEdit(val) {
     if (!val) return '';
     return { label: val.name, id: val.id };
+  },
+
+  staffManyListFormatter(val) {
+    if (!val || !val.length) return [];
+    return val.map((item) => item.employee_name);
+  },
+  staffOneListFormatter(val) {
+    if (!val) return '';
+    return val.employee_name;
+  },
+  staffManyListFormatterEdit(val) {
+    if (!val || !val.length) return [];
+    return val.map((item) => {
+      return { id: item.id, label: item.employee_name };
+    });
+  },
+  staffOneListFormatterEdit(val) {
+    if (!val) return '';
+    return { label: val.employee_name, id: val.id };
   },
 };

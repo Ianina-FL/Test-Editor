@@ -63,12 +63,6 @@ const Work_ordersView = () => {
             <p>{work_orders?.order_number}</p>
           </div>
 
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>ProductionManager</p>
-
-            <p>{work_orders?.production_manager?.firstName ?? 'No data'}</p>
-          </div>
-
           <>
             <p className={'block font-bold mb-2'}>RawMaterials</p>
             <CardBox

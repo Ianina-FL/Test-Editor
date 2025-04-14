@@ -43,6 +43,10 @@ const permissionsRoutes = require('./routes/permissions');
 
 const companiesRoutes = require('./routes/companies');
 
+const staffRoutes = require('./routes/staff');
+
+const clientsRoutes = require('./routes/clients');
+
 const getBaseUrl = (url) => {
   if (!url) return '';
   return url.endsWith('/api') ? url.slice(0, -4) : url;
@@ -172,6 +176,18 @@ app.use(
   '/api/companies',
   passport.authenticate('jwt', { session: false }),
   companiesRoutes,
+);
+
+app.use(
+  '/api/staff',
+  passport.authenticate('jwt', { session: false }),
+  staffRoutes,
+);
+
+app.use(
+  '/api/clients',
+  passport.authenticate('jwt', { session: false }),
+  clientsRoutes,
 );
 
 app.use(

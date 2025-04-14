@@ -162,6 +162,14 @@ module.exports = class CompaniesDBApi {
       transaction,
     });
 
+    output.staff_companies = await companies.getStaff_companies({
+      transaction,
+    });
+
+    output.clients_companies = await companies.getClients_companies({
+      transaction,
+    });
+
     return output;
   }
 
