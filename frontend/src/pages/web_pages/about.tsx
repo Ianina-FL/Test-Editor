@@ -145,7 +145,7 @@ export default function WebSite() {
         <FeaturesSection
           projectName={'Test Editor'}
           image={['ERP dashboard on a screen']}
-          withBg={0}
+          withBg={1}
           features={features_points}
           mainText={`Explore ${projectName} Core Features`}
           subTitle={`Discover the powerful features of ${projectName} that streamline your manufacturing operations and drive success.`}
