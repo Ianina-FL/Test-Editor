@@ -21,7 +21,7 @@ export default function WebSiteHeader({
 
   const style = HeaderStyle.PAGES_RIGHT;
 
-  const design = HeaderDesigns.DEFAULT_DESIGN;
+  const design = HeaderDesigns.DESIGN_DIVERSITY;
   return (
     <header id='websiteHeader' className='overflow-hidden'>
       <div
