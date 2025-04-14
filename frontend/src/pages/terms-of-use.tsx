@@ -5,7 +5,7 @@ import LayoutGuest from '../layouts/Guest';
 import { getPageTitle } from '../config';
 
 export default function PrivacyPolicy() {
-  const title = 'Test Editor';
+  const title = 'Test Editor 100';
   const [projectUrl, setProjectUrl] = useState('');
 
   useEffect(() => {

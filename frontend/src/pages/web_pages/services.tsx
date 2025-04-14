@@ -21,7 +21,7 @@ import TestimonialsSection from '../../components/WebPageComponents/Testimonials
 export default function WebSite() {
   const cardsStyle = useAppSelector((state) => state.style.cardsStyle);
   const bgColor = useAppSelector((state) => state.style.bgLayoutColor);
-  const projectName = 'Test Editor';
+  const projectName = 'Test Editor 100';
 
   useEffect(() => {
     const darkElement = document.querySelector('body .dark');
@@ -137,10 +137,10 @@ export default function WebSite() {
           content={`Explore the comprehensive services offered by ${projectName} to enhance your manufacturing operations. Discover how our ERP solutions can streamline processes and drive success.`}
         />
       </Head>
-      <WebSiteHeader projectName={'Test Editor'} pages={pages} />
+      <WebSiteHeader projectName={'Test Editor 100'} pages={pages} />
       <main className={`flex-grow    bg-white  rounded-none  `}>
         <HeroSection
-          projectName={'Test Editor'}
+          projectName={'Test Editor 100'}
           image={['Factory floor with machinery']}
           mainText={`Transform Your Operations with ${projectName}`}
           subTitle={`Discover the range of services offered by ${projectName} to streamline your manufacturing processes. Our ERP solutions are designed to enhance efficiency and drive growth.`}
@@ -149,9 +149,9 @@ export default function WebSite() {
         />
 
         <FeaturesSection
-          projectName={'Test Editor'}
+          projectName={'Test Editor 100'}
           image={['ERP system interface on screen']}
-          withBg={0}
+          withBg={1}
           features={features_points}
           mainText={`Unleash the Power of ${projectName} Services`}
           subTitle={`Explore the key features of ${projectName} that are designed to optimize your manufacturing operations and drive success.`}
@@ -159,13 +159,13 @@ export default function WebSite() {
         />
 
         <TestimonialsSection
-          projectName={'Test Editor'}
+          projectName={'Test Editor 100'}
           design={TestimonialsDesigns.MULTI_CARD_DISPLAY || ''}
           testimonials={testimonials}
           mainText={`What Our Clients Say About ${projectName} `}
         />
       </main>
-      <WebSiteFooter projectName={'Test Editor'} pages={pages} />
+      <WebSiteFooter projectName={'Test Editor 100'} pages={pages} />
     </div>
   );
 }

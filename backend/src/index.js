@@ -23,8 +23,6 @@ const contactFormRoutes = require('./routes/contactForm');
 
 const usersRoutes = require('./routes/users');
 
-const employeesRoutes = require('./routes/employees');
-
 const inventoryRoutes = require('./routes/inventory');
 
 const machineryRoutes = require('./routes/machinery');
@@ -57,9 +55,9 @@ const options = {
     openapi: '3.0.0',
     info: {
       version: '1.0.0',
-      title: 'Test Editor',
+      title: 'Test Editor 100',
       description:
-        'Test Editor Online REST API for Testing and Prototyping application. You can perform all major operations with your entities - create, delete and etc.',
+        'Test Editor 100 Online REST API for Testing and Prototyping application. You can perform all major operations with your entities - create, delete and etc.',
     },
     servers: [
       {
@@ -116,12 +114,6 @@ app.use(
   '/api/users',
   passport.authenticate('jwt', { session: false }),
   usersRoutes,
-);
-
-app.use(
-  '/api/employees',
-  passport.authenticate('jwt', { session: false }),
-  employeesRoutes,
 );
 
 app.use(

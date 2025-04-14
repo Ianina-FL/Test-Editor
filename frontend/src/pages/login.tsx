@@ -50,7 +50,7 @@ export default function Login() {
     remember: true,
   });
 
-  const title = 'Test Editor';
+  const title = 'Test Editor 100';
 
   // Fetch Pexels image/video
   useEffect(() => {
@@ -195,7 +195,7 @@ export default function Login() {
           <div className='flex items-center justify-center flex-col space-y-4 w-full lg:w-full'>
             <CardBox id='loginRoles' className='w-full md:w-3/5 lg:w-2/3'>
               <Link href={'/home'}>
-                <h2 className='text-4xl font-semibold my-4'> Test Editor</h2>
+                <h2 className='text-4xl font-semibold my-4'> {title}</h2>
               </Link>
 
               <div className='flex flex-row text-gray-500 justify-between'>

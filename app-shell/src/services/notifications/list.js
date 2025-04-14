@@ -1,6 +1,6 @@
 const errors = {
   app: {
-    title: 'Test Editor 100',
+    title: 'test',
   },
 
   auth: {
