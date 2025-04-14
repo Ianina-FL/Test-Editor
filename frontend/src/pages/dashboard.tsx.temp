@@ -97,12 +97,6 @@ const Dashboard = () => {
   React.useEffect(() => {
     if (!currentUser) return;
     loadData().then();
-
-  }, [currentUser]);
-
-
-  return (
-    <>
       <Head>
         <title>{getPageTitle('Dashboard')}</title>
       </Head>
