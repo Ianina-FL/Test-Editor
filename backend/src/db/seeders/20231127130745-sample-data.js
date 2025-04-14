@@ -57,6 +57,30 @@ const EmployeesData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    employee_name: 'Carol Johnson',
+
+    role: 'Inspector',
+
+    shift: 'Night',
+
+    payroll: 47000,
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    employee_name: 'David Lee',
+
+    role: 'Manager',
+
+    shift: 'Day',
+
+    payroll: 60000,
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const InventoryData = [
@@ -65,7 +89,7 @@ const InventoryData = [
 
     quantity: 150,
 
-    status: 'returned',
+    status: 'reserved',
 
     // type code here for "relation_one" field
   },
@@ -75,7 +99,7 @@ const InventoryData = [
 
     quantity: 75,
 
-    status: 'available',
+    status: 'reserved',
 
     // type code here for "relation_one" field
   },
@@ -85,7 +109,27 @@ const InventoryData = [
 
     quantity: 200,
 
-    status: 'returned',
+    status: 'available',
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    item_name: 'Plastic Tubes',
+
+    quantity: 300,
+
+    status: 'available',
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    item_name: 'Rubber Gaskets',
+
+    quantity: 500,
+
+    status: 'reserved',
 
     // type code here for "relation_one" field
   },
@@ -118,6 +162,26 @@ const MachineryData = [
     maintenance_schedule: 'Monthly',
 
     last_maintenance_date: new Date('2023-09-15T00:00:00Z'),
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    machine_name: 'Press',
+
+    maintenance_schedule: 'Bi-Annual',
+
+    last_maintenance_date: new Date('2023-06-01T00:00:00Z'),
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    machine_name: 'Welder',
+
+    maintenance_schedule: 'Monthly',
+
+    last_maintenance_date: new Date('2023-09-10T00:00:00Z'),
 
     // type code here for "relation_one" field
   },
@@ -159,6 +223,30 @@ const QualityControlsData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    check_name: 'Random Check',
+
+    // type code here for "relation_one" field
+
+    check_date: new Date('2023-10-17T11:00:00Z'),
+
+    passed: true,
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    check_name: 'Compliance Audit',
+
+    // type code here for "relation_one" field
+
+    check_date: new Date('2023-10-22T09:00:00Z'),
+
+    passed: true,
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const RawMaterialsData = [
@@ -197,6 +285,30 @@ const RawMaterialsData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    material_name: 'Plastic',
+
+    quantity: 2000,
+
+    reorder_level: 500,
+
+    // type code here for "relation_many" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    material_name: 'Rubber',
+
+    quantity: 1500,
+
+    reorder_level: 300,
+
+    // type code here for "relation_many" field
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const SuppliersData = [
@@ -226,6 +338,26 @@ const SuppliersData = [
     contact_info: 'sales@copperco.com',
 
     contract_terms: 'Flexible contract with on-demand orders.',
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    supplier_name: 'PolyPlastics',
+
+    contact_info: 'support@polyplastics.com',
+
+    contract_terms: 'Long-term contract with bi-weekly deliveries.',
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    supplier_name: 'RubberMakers',
+
+    contact_info: 'service@rubbermakers.com',
+
+    contract_terms: 'Annual contract with monthly reviews.',
 
     // type code here for "relation_one" field
   },
@@ -273,6 +405,34 @@ const WorkOrdersData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    order_number: 'WO-004',
+
+    // type code here for "relation_many" field
+
+    // type code here for "relation_many" field
+
+    start_date: new Date('2023-10-16T08:00:00Z'),
+
+    end_date: new Date('2023-10-20T17:00:00Z'),
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    order_number: 'WO-005',
+
+    // type code here for "relation_many" field
+
+    // type code here for "relation_many" field
+
+    start_date: new Date('2023-10-21T08:00:00Z'),
+
+    end_date: new Date('2023-10-25T17:00:00Z'),
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const CompaniesData = [
@@ -287,25 +447,45 @@ const CompaniesData = [
   {
     name: 'CraftWorks',
   },
+
+  {
+    name: 'ManufacturePlus',
+  },
+
+  {
+    name: 'ProdSolutions',
+  },
 ];
 
 const StaffData = [
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Karl Landsteiner',
+    employee_name: 'Comte de Buffon',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Albert Einstein',
+    employee_name: 'Alfred Binet',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Hans Selye',
+    employee_name: 'Ernest Rutherford',
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    employee_name: 'B. F. Skinner',
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    employee_name: 'Emil Fischer',
   },
 ];
 
@@ -313,7 +493,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Carl Gauss (Karl Friedrich Gauss)',
+    client_name: 'Frederick Sanger',
 
     date_registered: new Date(Date.now()),
 
@@ -323,7 +503,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Leonard Euler',
+    client_name: 'John Dalton',
 
     date_registered: new Date(Date.now()),
 
@@ -333,7 +513,27 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Charles Darwin',
+    client_name: 'Alfred Kinsey',
+
+    date_registered: new Date(Date.now()),
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    client_name: 'Marcello Malpighi',
+
+    date_registered: new Date(Date.now()),
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    // type code here for "relation_one" field
+
+    client_name: 'Max Born',
 
     date_registered: new Date(Date.now()),
 
@@ -376,6 +576,28 @@ async function associateUserWithCompany() {
   if (User2?.setCompany) {
     await User2.setCompany(relatedCompany2);
   }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const User3 = await Users.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (User3?.setCompany) {
+    await User3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const User4 = await Users.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (User4?.setCompany) {
+    await User4.setCompany(relatedCompany4);
+  }
 }
 
 async function associateEmployeeWithCompany() {
@@ -410,6 +632,28 @@ async function associateEmployeeWithCompany() {
   });
   if (Employee2?.setCompany) {
     await Employee2.setCompany(relatedCompany2);
+  }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Employee3 = await Employees.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Employee3?.setCompany) {
+    await Employee3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Employee4 = await Employees.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Employee4?.setCompany) {
+    await Employee4.setCompany(relatedCompany4);
   }
 }
 
@@ -446,6 +690,28 @@ async function associateInventoryWithCompany() {
   if (Inventory2?.setCompany) {
     await Inventory2.setCompany(relatedCompany2);
   }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Inventory3 = await Inventory.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Inventory3?.setCompany) {
+    await Inventory3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Inventory4 = await Inventory.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Inventory4?.setCompany) {
+    await Inventory4.setCompany(relatedCompany4);
+  }
 }
 
 async function associateMachineryWithCompany() {
@@ -480,6 +746,28 @@ async function associateMachineryWithCompany() {
   });
   if (Machinery2?.setCompany) {
     await Machinery2.setCompany(relatedCompany2);
+  }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Machinery3 = await Machinery.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Machinery3?.setCompany) {
+    await Machinery3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Machinery4 = await Machinery.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Machinery4?.setCompany) {
+    await Machinery4.setCompany(relatedCompany4);
   }
 }
 
@@ -516,6 +804,28 @@ async function associateQualityControlWithWork_order() {
   if (QualityControl2?.setWork_order) {
     await QualityControl2.setWork_order(relatedWork_order2);
   }
+
+  const relatedWork_order3 = await WorkOrders.findOne({
+    offset: Math.floor(Math.random() * (await WorkOrders.count())),
+  });
+  const QualityControl3 = await QualityControls.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (QualityControl3?.setWork_order) {
+    await QualityControl3.setWork_order(relatedWork_order3);
+  }
+
+  const relatedWork_order4 = await WorkOrders.findOne({
+    offset: Math.floor(Math.random() * (await WorkOrders.count())),
+  });
+  const QualityControl4 = await QualityControls.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (QualityControl4?.setWork_order) {
+    await QualityControl4.setWork_order(relatedWork_order4);
+  }
 }
 
 async function associateQualityControlWithCompany() {
@@ -550,6 +860,28 @@ async function associateQualityControlWithCompany() {
   });
   if (QualityControl2?.setCompany) {
     await QualityControl2.setCompany(relatedCompany2);
+  }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const QualityControl3 = await QualityControls.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (QualityControl3?.setCompany) {
+    await QualityControl3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const QualityControl4 = await QualityControls.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (QualityControl4?.setCompany) {
+    await QualityControl4.setCompany(relatedCompany4);
   }
 }
 
@@ -588,6 +920,28 @@ async function associateRawMaterialWithCompany() {
   if (RawMaterial2?.setCompany) {
     await RawMaterial2.setCompany(relatedCompany2);
   }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const RawMaterial3 = await RawMaterials.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (RawMaterial3?.setCompany) {
+    await RawMaterial3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const RawMaterial4 = await RawMaterials.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (RawMaterial4?.setCompany) {
+    await RawMaterial4.setCompany(relatedCompany4);
+  }
 }
 
 async function associateSupplierWithCompany() {
@@ -622,6 +976,28 @@ async function associateSupplierWithCompany() {
   });
   if (Supplier2?.setCompany) {
     await Supplier2.setCompany(relatedCompany2);
+  }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Supplier3 = await Suppliers.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Supplier3?.setCompany) {
+    await Supplier3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Supplier4 = await Suppliers.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Supplier4?.setCompany) {
+    await Supplier4.setCompany(relatedCompany4);
   }
 }
 
@@ -662,6 +1038,28 @@ async function associateWorkOrderWithCompany() {
   if (WorkOrder2?.setCompany) {
     await WorkOrder2.setCompany(relatedCompany2);
   }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const WorkOrder3 = await WorkOrders.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (WorkOrder3?.setCompany) {
+    await WorkOrder3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const WorkOrder4 = await WorkOrders.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (WorkOrder4?.setCompany) {
+    await WorkOrder4.setCompany(relatedCompany4);
+  }
 }
 
 async function associateStaffWithCompany() {
@@ -696,6 +1094,28 @@ async function associateStaffWithCompany() {
   });
   if (Staff2?.setCompany) {
     await Staff2.setCompany(relatedCompany2);
+  }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Staff3 = await Staff.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Staff3?.setCompany) {
+    await Staff3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Staff4 = await Staff.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Staff4?.setCompany) {
+    await Staff4.setCompany(relatedCompany4);
   }
 }
 
@@ -732,6 +1152,28 @@ async function associateClientWithCompany() {
   if (Client2?.setCompany) {
     await Client2.setCompany(relatedCompany2);
   }
+
+  const relatedCompany3 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Client3 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Client3?.setCompany) {
+    await Client3.setCompany(relatedCompany3);
+  }
+
+  const relatedCompany4 = await Companies.findOne({
+    offset: Math.floor(Math.random() * (await Companies.count())),
+  });
+  const Client4 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Client4?.setCompany) {
+    await Client4.setCompany(relatedCompany4);
+  }
 }
 
 async function associateClientWithClients_manager() {
@@ -766,6 +1208,28 @@ async function associateClientWithClients_manager() {
   });
   if (Client2?.setClients_manager) {
     await Client2.setClients_manager(relatedClients_manager2);
+  }
+
+  const relatedClients_manager3 = await Staff.findOne({
+    offset: Math.floor(Math.random() * (await Staff.count())),
+  });
+  const Client3 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Client3?.setClients_manager) {
+    await Client3.setClients_manager(relatedClients_manager3);
+  }
+
+  const relatedClients_manager4 = await Staff.findOne({
+    offset: Math.floor(Math.random() * (await Staff.count())),
+  });
+  const Client4 = await Clients.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Client4?.setClients_manager) {
+    await Client4.setClients_manager(relatedClients_manager4);
   }
 }
 
