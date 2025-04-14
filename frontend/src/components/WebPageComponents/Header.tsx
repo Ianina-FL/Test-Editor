@@ -19,9 +19,9 @@ export default function WebSiteHeader({
   const websiteHeder = useAppSelector((state) => state.style.websiteHeder);
   const borders = useAppSelector((state) => state.style.borders);
 
-  const style = HeaderStyle.PAGES_LEFT;
+  const style = HeaderStyle.PAGES_RIGHT;
 
-  const design = HeaderDesigns.DESIGN_DIVERSITY;
+  const design = HeaderDesigns.DEFAULT_DESIGN;
   return (
     <header id='websiteHeader' className='overflow-hidden'>
       <div

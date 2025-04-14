@@ -75,7 +75,7 @@ const InventoryData = [
 
     quantity: 75,
 
-    status: 'reserved',
+    status: 'returned',
 
     // type code here for "relation_one" field
   },
@@ -155,7 +155,7 @@ const QualityControlsData = [
 
     check_date: new Date('2023-10-12T16:00:00Z'),
 
-    passed: true,
+    passed: false,
 
     // type code here for "relation_one" field
   },
@@ -293,19 +293,19 @@ const StaffData = [
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Albrecht von Haller',
+    employee_name: 'Dmitri Mendeleev',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Alfred Binet',
+    employee_name: 'August Kekule',
   },
 
   {
     // type code here for "relation_one" field
 
-    employee_name: 'Jonas Salk',
+    employee_name: 'Carl Linnaeus',
   },
 ];
 
@@ -313,7 +313,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Alfred Binet',
+    client_name: 'Louis Pasteur',
 
     date_registered: new Date(Date.now()),
 
@@ -323,7 +323,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Albert Einstein',
+    client_name: 'Robert Koch',
 
     date_registered: new Date(Date.now()),
 
@@ -333,7 +333,7 @@ const ClientsData = [
   {
     // type code here for "relation_one" field
 
-    client_name: 'Arthur Eddington',
+    client_name: 'Euclid',
 
     date_registered: new Date(Date.now()),
 
